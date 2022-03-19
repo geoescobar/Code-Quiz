@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Montserrat:wght@200;400;500&family=Poppins:ital,wght@0,100;0,300;1,500&display=swap');
+
+/* Entire page styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* Styling for the high score & timer */
+header {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    font-size: 20px;
+}
+
+/* Styling for the title  */
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+/* Styling for the quetions  */
+#display-questions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+
+
+
+/* Styling for the buttons  */
+.buttons {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 5vw;
+    height: 5vh;
+    margin: 0 500px;
+}
+

@@ -73,5 +73,9 @@ header {
     border-width: 2.5px;
     border-radius: 10px;
     border-style: solid;
+    cursor: pointer;
 }
 
+.buttons:hover{
+    background-color: #229A80;
+}

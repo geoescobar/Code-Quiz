@@ -27,35 +27,35 @@ startBtn.addEventListener('click', startGame);
 var questions = [
     {
         quesiton: 'example question 1:',
-        answerA: 'answer 1',
-        answerB: 'answer 2',
-        answerC: 'answer 3',
-        answerD: 'answer 4',
+        answerChoiceA: 'answer 1.1',
+        answerChoiceB: 'answer 2.1',
+        answerChoiceC: 'answer 3.1',
+        answerChoiceD: 'answer 4.1',
         correctAnswer: 'answer 1'
     },
     {
-        quesiton: 'example question 1:',
-        answerA: 'answer 1',
-        answerB: 'answer 2',
-        answerC: 'answer 3',
-        answerD: 'answer 4',
-        correctAnswer: 'answer 2'
+        quesiton: 'example question 2:',
+        answerChoiceA: 'answer 1.2',
+        answerChoiceB: 'answer 2.2',
+        answerChoiceC: 'answer 3.2',
+        answerChoiceD: 'answer 4.2',
+        correctAnswer: 'answer 2.2'
     },
     {
-        quesiton: 'example question 1:',
-        answerA: 'answer 1',
-        answerB: 'answer 2',
-        answerC: 'answer 3',
-        answerD: 'answer 4',
-        correctAnswer: 'answer 3'
+        quesiton: 'example question 3:',
+        answerChoiceA: 'answer 1.3',
+        answerChoiceB: 'answer 2.3',
+        answerChoiceC: 'answer 3.3',
+        answerChoiceD: 'answer 4.3',
+        correctAnswer: 'answer 3.3'
     },
     {
-        quesiton: 'example question 1:',
-        answerA: 'answer 1',
-        answerB: 'answer 2',
-        answerC: 'answer 3',
-        answerD: 'answer 4',
-        correctAnswer: 'answer 4'
+        quesiton: 'example question 4:',
+        answerChoiceA: 'answer 1.4',
+        answerChoiceB: 'answer 2.4',
+        answerChoiceC: 'answer 3.4',
+        answerChoiceD: 'answer 4.4',
+        correctAnswer: 'answer 4.4'
     },
 ]
 
@@ -66,30 +66,25 @@ function endGame() {
 
 var quesitonIndex = 0;
 function askNextQuestion() {
+    console.log(quesitonIndex);
     if (quesitonIndex >= questions.length) {
         endGame();
     } else {
-        questionElement.textContent = questions[quesitonIndex].quesiton;
-        questionElement.textContent = questions[quesitonIndex].answerA;
-        questionElement.textContent = questions[quesitonIndex].answerB;
-        questionElement.textContent = questions[quesitonIndex].answerC;
-        questionElement.textContent = questions[quesitonIndex].answerD;
-        questionElement.textContent = questions[quesitonIndex].correctAnswer;
+        displayQuestion.textContent = questions[quesitonIndex].quesiton;
+        answerA.textContent = questions[quesitonIndex].answerChoiceA;
+        answerB.textContent = questions[quesitonIndex].answerChoiceB;
+        answerC.textContent = questions[quesitonIndex].answerChoiceC;
+        answerD.textContent = questions[quesitonIndex].answerChoiceD;
+        // questionElement.textContent = questions[quesitonIndex].correctAnswer;
 
     }
+    quesitonIndex++;
 }
 
 var timeRemaining = 60;
 
 answerA.addEventListener('click', function (event) {
-    event.preventDefault();
-    console.log('answer a has been clicked');
-    quesitonIndex++;
-    askNextQuestion();
-});
-
-answerD.addEventListener('click', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log('answer a has been clicked');
 
     if (questions[quesitonIndex].correctAnswer === 'B') {
@@ -97,7 +92,42 @@ answerD.addEventListener('click', function (event) {
     } else {
         alert('Incorrect')
     }
-    quesitonIndex++;
+    askNextQuestion();
+});
+
+answerB.addEventListener('click', function (event) {
+    // event.preventDefault();
+    console.log('answer b has been clicked');
+
+    if (questions[quesitonIndex].correctAnswer === 'B') {
+        alert('Correct')
+    } else {
+        alert('Incorrect')
+    }
+    askNextQuestion();
+});
+
+answerC.addEventListener('click', function (event) {
+    // event.preventDefault();
+    console.log('answer c has been clicked');
+
+    if (questions[quesitonIndex].correctAnswer === 'B') {
+        alert('Correct')
+    } else {
+        alert('Incorrect')
+    }
+    askNextQuestion();
+});
+
+answerD.addEventListener('click', function (event) {
+    // event.preventDefault();
+    console.log('answer d has been clicked');
+
+    if (questions[quesitonIndex].correctAnswer === 'B') {
+        alert('Correct')
+    } else {
+        alert('Incorrect')
+    }
     timeRemaining -= 10;
     askNextQuestion();
 });
@@ -126,8 +156,9 @@ function startGame() {
     answerC.style.display = 'block';
     answerD.style.display = 'block';
     // container.classList.toggle('hide');
-    askNextQuestion();
     startTimer();
+    askNextQuestion();
 }
 
 startBtn.addEventListener('click', startGame);
+

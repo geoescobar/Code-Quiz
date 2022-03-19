@@ -26,36 +26,36 @@ startBtn.addEventListener('click', startGame);
 
 var questions = [
     {
-        quesiton: 'example question 1:',
-        answerChoiceA: 'answer 1.1',
-        answerChoiceB: 'answer 2.1',
-        answerChoiceC: 'answer 3.1',
-        answerChoiceD: 'answer 4.1',
-        correctAnswer: 'answer 1'
+        quesiton: 'What is 2+2?',
+        answerChoiceA: '8',
+        answerChoiceB: '4',
+        answerChoiceC: '2',
+        answerChoiceD: '0',
+        correctAnswer: '4'
     },
     {
-        quesiton: 'example question 2:',
-        answerChoiceA: 'answer 1.2',
-        answerChoiceB: 'answer 2.2',
-        answerChoiceC: 'answer 3.2',
-        answerChoiceD: 'answer 4.2',
-        correctAnswer: 'answer 2.2'
+        quesiton: 'Dallas is in what state?',
+        answerChoiceA: 'Arizona',
+        answerChoiceB: 'California',
+        answerChoiceC: 'Florida',
+        answerChoiceD: 'Texas',
+        correctAnswer: 'Texas'
     },
     {
-        quesiton: 'example question 3:',
-        answerChoiceA: 'answer 1.3',
-        answerChoiceB: 'answer 2.3',
-        answerChoiceC: 'answer 3.3',
-        answerChoiceD: 'answer 4.3',
-        correctAnswer: 'answer 3.3'
+        quesiton: 'Which is a programming language?',
+        answerChoiceA: 'JavaScript',
+        answerChoiceB: 'French',
+        answerChoiceC: 'English',
+        answerChoiceD: 'Spanish',
+        correctAnswer: 'JavaScript'
     },
     {
-        quesiton: 'example question 4:',
-        answerChoiceA: 'answer 1.4',
-        answerChoiceB: 'answer 2.4',
-        answerChoiceC: 'answer 3.4',
-        answerChoiceD: 'answer 4.4',
-        correctAnswer: 'answer 4.4'
+        quesiton: 'Inside which HTML element do we put Javascript?',
+        answerChoiceA: '<js>',
+        answerChoiceB: '<javascript>',
+        answerChoiceC: '<script>',
+        answerChoiceD: '<java>',
+        correctAnswer: '<script>'
     },
 ]
 

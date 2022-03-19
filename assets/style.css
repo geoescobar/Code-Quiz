@@ -50,7 +50,7 @@ header {
     justify-content: center;
     text-align: center;
     align-items: center;
-    /* margin-top: 15vh; */
+    margin-top: 5vh;
 }
 
 
@@ -64,5 +64,11 @@ header {
     top : 50px; */
     padding : 10px;
     margin: 0 auto;
+    background-color: #48E5C2;
+    color: #333333;
+    border-color: #5E5E5E;
+    border-width: 2.5px;
+    border-radius: 10px;
+    border-style: solid;
 }
 

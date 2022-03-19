@@ -81,26 +81,26 @@ function askNextQuestion() {
 
 var timeRemaining = 60;
 
-// answerA.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     console.log('answer a has been clicked');
-//     quesitonIndex++;
-//     askNextQuestion();
-// });
+answerA.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('answer a has been clicked');
+    quesitonIndex++;
+    askNextQuestion();
+});
 
-// answerD.addEventListener('click', function (event) {
-//     event.preventDefault();
-//     console.log('answer a has been clicked');
+answerD.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log('answer a has been clicked');
 
-//     if (questions[quesitonIndex].correctAnswer === 'B') {
-//         alert('Correct')
-//     } else {
-//         alert('Incorrect')
-//     }
-//     quesitonIndex++;
-//     timeRemaining -= 10;
-//     askNextQuestion();
-// });
+    if (questions[quesitonIndex].correctAnswer === 'B') {
+        alert('Correct')
+    } else {
+        alert('Incorrect')
+    }
+    quesitonIndex++;
+    timeRemaining -= 10;
+    askNextQuestion();
+});
 
 function startTimer() {
     var timerInterval = setInterval(function () {

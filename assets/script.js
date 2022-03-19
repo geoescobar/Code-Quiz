@@ -1,20 +1,20 @@
 var startBtn = document.getElementById('start-btn');
-var nextBtn = document.getElementById('next-btn');
-var submitBtn = document.getElementById('submit-btn');
 var answerA = document.getElementById('answer-btn-1');
 var answerB = document.getElementById('answer-btn-2');
 var answerC = document.getElementById('answer-btn-3');
 var answerD = document.getElementById('answer-btn-4');
 var container = document.getElementById('quiz-container');
 var displayQuestion = document.getElementById('display-questions');
-
+var timerInterval;
+var score = 0;
+var getReuslt = document.getElementById('display-results');
+var scoreTracker = 0
+var highScore = document.getElementById('high-score');
 
 
 console.log(container)
 
 displayQuestion.style.display = 'none';
-nextBtn.style.display = 'none';
-submitBtn.style.display = 'none';
 answerA.style.display = 'none';
 answerB.style.display = 'none';
 answerC.style.display = 'none';
@@ -31,7 +31,7 @@ var questions = [
         answerChoiceB: '4',
         answerChoiceC: '2',
         answerChoiceD: '0',
-        correctAnswer: '4'
+        correctAnswer: 'B'
     },
     {
         quesiton: 'Dallas is in what state?',
@@ -39,7 +39,7 @@ var questions = [
         answerChoiceB: 'California',
         answerChoiceC: 'Florida',
         answerChoiceD: 'Texas',
-        correctAnswer: 'Texas'
+        correctAnswer: 'D'
     },
     {
         quesiton: 'Which is a programming language?',
@@ -47,7 +47,7 @@ var questions = [
         answerChoiceB: 'French',
         answerChoiceC: 'English',
         answerChoiceD: 'Spanish',
-        correctAnswer: 'JavaScript'
+        correctAnswer: 'A'
     },
     {
         quesiton: 'Inside which HTML element do we put Javascript?',
@@ -55,13 +55,36 @@ var questions = [
         answerChoiceB: '<javascript>',
         answerChoiceC: '<script>',
         answerChoiceD: '<java>',
-        correctAnswer: '<script>'
+        correctAnswer: 'C'
     },
 ]
 
 function endGame() {
-    alert('Game is over');
-
+    clearInterval(timerInterval);
+    displayQuestion.style.display = 'none';
+    answerA.style.display = 'none';
+    answerB.style.display = 'none';
+    answerC.style.display = 'none';
+    answerD.style.display = 'none';
+    getReuslt.textContent = 'Your score: ' + score;
+    if (score > scoreTracker) {
+        scoreTracker = score
+        highScore.textContent = 'High Score: ' + scoreTracker;
+    }
+    quesitonIndex = 0;
+    timeRemaining = 60;
+    startBtn.style.display = 'block';
+    getReuslt.style.display = 'block';
+    // var scores = JSON.parse(localStorage.getItem('initials'));
+    // if (scores === null) {
+    //     scores = []
+    // }
+    // scores.push('GE: ' + score)
+    // localStorage.setItem('initials', JSON.stringify(scores))
+    // for (var item of JSON.parse(localStorage.getItem('initials'))){
+    //     console.log(item)
+    // }
+    // score = 0
 }
 
 var quesitonIndex = 0;
@@ -75,90 +98,85 @@ function askNextQuestion() {
         answerB.textContent = questions[quesitonIndex].answerChoiceB;
         answerC.textContent = questions[quesitonIndex].answerChoiceC;
         answerD.textContent = questions[quesitonIndex].answerChoiceD;
-        // questionElement.textContent = questions[quesitonIndex].correctAnswer;
 
     }
-    quesitonIndex++;
 }
 
 var timeRemaining = 60;
 
 answerA.addEventListener('click', function (event) {
-    // event.preventDefault();
     console.log('answer a has been clicked');
 
-    if (questions[quesitonIndex].correctAnswer === 'B') {
-        alert('Correct')
+    if (questions[quesitonIndex].correctAnswer === 'A') {
+        score++
     } else {
-        alert('Incorrect')
+        timeRemaining -= 10;
     }
+    quesitonIndex++;
     askNextQuestion();
 });
 
 answerB.addEventListener('click', function (event) {
-    // event.preventDefault();
     console.log('answer b has been clicked');
 
     if (questions[quesitonIndex].correctAnswer === 'B') {
-        alert('Correct')
+        score++
     } else {
-        alert('Incorrect')
+        timeRemaining -= 10;
     }
+    quesitonIndex++;
     askNextQuestion();
 });
 
 answerC.addEventListener('click', function (event) {
-    // event.preventDefault();
     console.log('answer c has been clicked');
 
-    if (questions[quesitonIndex].correctAnswer === 'B') {
-        alert('Correct')
+    if (questions[quesitonIndex].correctAnswer === 'C') {
+        score++
     } else {
-        alert('Incorrect')
+        timeRemaining -= 10;
     }
+    quesitonIndex++;
     askNextQuestion();
 });
 
 answerD.addEventListener('click', function (event) {
-    // event.preventDefault();
     console.log('answer d has been clicked');
 
-    if (questions[quesitonIndex].correctAnswer === 'B') {
-        alert('Correct')
+    if (questions[quesitonIndex].correctAnswer === 'D') {
+        score++
     } else {
-        alert('Incorrect')
+        timeRemaining -= 10;
     }
-    timeRemaining -= 10;
+    quesitonIndex++;
+    
     askNextQuestion();
 });
 
 function startTimer() {
-    var timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         timeRemaining--;
 
         if (timeRemaining === 0) {
-            clearInterval(timerInterval);
             endGame();
         }
 
-        document.getElementById('timer').textContent = timeRemaining;
+        document.getElementById('timer').textContent = 'Timer: ' + timeRemaining;
         console.log('interval running', timeRemaining);
 
     }, 1000);
 }
 
 function startGame() {
+    startBtn.style.display = 'none';
+    getReuslt.style.display = 'none';
     displayQuestion.style.display = 'block';
-    nextBtn.style.display = 'block';
-    submitBtn.style.display = 'block';
     answerA.style.display = 'block';
     answerB.style.display = 'block';
     answerC.style.display = 'block';
     answerD.style.display = 'block';
-    // container.classList.toggle('hide');
     startTimer();
     askNextQuestion();
 }
 
-startBtn.addEventListener('click', startGame);
 

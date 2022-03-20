@@ -27,19 +27,19 @@ startBtn.addEventListener('click', startGame);
 // Created variable holding an array to display questions, answers, and correct answer
 var questions = [
     {
-        quesiton: 'What is 2+2?',
-        answerChoiceA: '8',
-        answerChoiceB: '4',
-        answerChoiceC: '2',
-        answerChoiceD: '0',
+        quesiton: 'Which browser popup lets you input text?',
+        answerChoiceA: 'Alert',
+        answerChoiceB: 'Prompt',
+        answerChoiceC: 'Confirm',
+        answerChoiceD: 'None of the above',
         correctAnswer: 'B'
     },
     {
-        quesiton: 'Dallas is in what state?',
-        answerChoiceA: 'Arizona',
-        answerChoiceB: 'California',
-        answerChoiceC: 'Florida',
-        answerChoiceD: 'Texas',
+        quesiton: 'Which is a type of variable in Javascript?',
+        answerChoiceA: 'var',
+        answerChoiceB: 'let',
+        answerChoiceC: 'const',
+        answerChoiceD: 'All of the above',
         correctAnswer: 'D'
     },
     {

@@ -15,3 +15,6 @@ In this activity, I was able to generate and functionally operate a quiz contiai
 * Finally, once you see your score the start button will appear to give you the option to take the quiz again. 
 
 * Within the javascript, html, and css there are comments explaining the various moving parts to this project that help as references understanding the functionality of each part. 
+
+![img](./assets/HW04_Pages_SS.png)
+![img](./assets/HW04_Repository_SS.png)

@@ -1,3 +1,4 @@
+// Create variables for HTML elements 
 var startBtn = document.getElementById('start-btn');
 var answerA = document.getElementById('answer-btn-1');
 var answerB = document.getElementById('answer-btn-2');
@@ -12,8 +13,7 @@ var scoreTracker = 0
 var highScore = document.getElementById('high-score');
 
 
-console.log(container)
-
+// Added display elements to hide question and answer buttons
 displayQuestion.style.display = 'none';
 answerA.style.display = 'none';
 answerB.style.display = 'none';
@@ -21,9 +21,10 @@ answerC.style.display = 'none';
 answerD.style.display = 'none';
 
 
-
+// Invoked function to start the game 
 startBtn.addEventListener('click', startGame);
 
+// Created variable holding an array to display questions, answers, and correct answer
 var questions = [
     {
         quesiton: 'What is 2+2?',
@@ -59,6 +60,7 @@ var questions = [
     },
 ]
 
+// Function to end the game 
 function endGame() {
     clearInterval(timerInterval);
     displayQuestion.style.display = 'none';
@@ -75,18 +77,10 @@ function endGame() {
     timeRemaining = 60;
     startBtn.style.display = 'block';
     getReuslt.style.display = 'block';
-    // var scores = JSON.parse(localStorage.getItem('initials'));
-    // if (scores === null) {
-    //     scores = []
-    // }
-    // scores.push('GE: ' + score)
-    // localStorage.setItem('initials', JSON.stringify(scores))
-    // for (var item of JSON.parse(localStorage.getItem('initials'))){
-    //     console.log(item)
-    // }
-    // score = 0
 }
 
+
+// Question index to render questinos on the screen 
 var quesitonIndex = 0;
 function askNextQuestion() {
     console.log(quesitonIndex);
@@ -104,6 +98,8 @@ function askNextQuestion() {
 
 var timeRemaining = 60;
 
+
+// Created event listeners to render next question and record correct answer for questions 1-4
 answerA.addEventListener('click', function (event) {
     console.log('answer a has been clicked');
 
@@ -153,6 +149,8 @@ answerD.addEventListener('click', function (event) {
     askNextQuestion();
 });
 
+
+// Timer function that operates the 60 second countdown 
 function startTimer() {
     timerInterval = setInterval(function () {
         timeRemaining--;
@@ -167,6 +165,8 @@ function startTimer() {
     }, 1000);
 }
 
+
+// start of the game function 
 function startGame() {
     startBtn.style.display = 'none';
     getReuslt.style.display = 'none';

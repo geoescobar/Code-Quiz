@@ -1,3 +1,4 @@
+/* imported google fonts to add some style to the page */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=Montserrat:wght@200;400;500&family=Poppins:ital,wght@0,100;0,300;1,500&display=swap');
 
 /* Entire page styling */
@@ -9,6 +10,7 @@
     font-family: 'Fredoka', sans-serif;
 }
 
+/* added background and font colors */
 body {
     background-color: #333333;
     color: #48E5C2;
@@ -65,10 +67,12 @@ header {
     cursor: pointer;
 }
 
+/* added hover effects when going over the questinos to know where you're at */
 .buttons:hover{
     background-color: #229A80;
 }
 
+/* added styling to center and enlarge results */
 #display-results {
     display: flex;
     justify-content: center;

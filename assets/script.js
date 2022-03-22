@@ -69,7 +69,7 @@ function endGame() {
     answerC.style.display = 'none';
     answerD.style.display = 'none';
     getReuslt.textContent = 'Your score: ' + score;
-    if (score > scoreTracker) {
+    if (score >= scoreTracker) {
         scoreTracker = score
         highScore.textContent = 'High Score: ' + scoreTracker;
     }
@@ -83,6 +83,7 @@ function endGame() {
 // Question index to render questinos on the screen 
 var quesitonIndex = 0;
 function askNextQuestion() {
+    console.log(score);
     console.log(quesitonIndex);
     if (quesitonIndex >= questions.length) {
         endGame();
@@ -145,7 +146,6 @@ answerD.addEventListener('click', function (event) {
         timeRemaining -= 10;
     }
     quesitonIndex++;
-    
     askNextQuestion();
 });
 
@@ -168,6 +168,7 @@ function startTimer() {
 
 // start of the game function 
 function startGame() {
+    score = 0
     startBtn.style.display = 'none';
     getReuslt.style.display = 'none';
     displayQuestion.style.display = 'block';
